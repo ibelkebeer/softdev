@@ -23,7 +23,7 @@ def linesToDict(lines):
             info_dict[job] = float(line.split(',')[1])
     return info_dict
 
-def pickOcc(Occupations):
+def pickOccupation(Occupations):
     percents = list(Occupations.values())
     occs = list(Occupations.keys())
     rand = random() * 99.8
@@ -34,6 +34,8 @@ def pickOcc(Occupations):
         percentTot += percents[index]
     return (occs[index])
 
+def randomOccupation():
+    return pickOccupation(linesToDict(readlines()))
 
-print(pickOcc(linesToDict(readlines())));
+print(randomOccupation())
 
