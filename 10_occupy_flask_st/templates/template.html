@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Occupations Table</title>
+  </head>
+  <body>
+    <h1>Tabelified Occupation Data</h1><br>
+    <h2>Random occupation: {{ var1 }}</h2><br>
+    <table border="1">
+      <tr>
+        <th>Job Class</th>
+        <th>Percentage</th>
+      </tr>
+      {% for i in items %}
+      <tr>
+        <th>{{ i }}</th>
+        <th>{{ dict[i] }}</th>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
