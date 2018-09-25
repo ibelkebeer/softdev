@@ -6,7 +6,7 @@
 from random import random
 
 def readlines():
-    f = open('occupations.csv', 'r')
+    f = open('data/occupations.csv', 'r')
     text = f.read().strip().split('\n')
     f.close()
     return text[1:][:-1]
