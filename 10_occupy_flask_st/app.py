@@ -4,30 +4,8 @@
 # 2018-09-24
 
 from flask import Flask, render_template
+from util import occs
 app = Flask(__name__)
-
-import csv
-import random
-occDict = {}
-
-# takes in a csv file and adds each row into the dictionary,
-# with its "Job Class" as the key and the "Percentage" as the value
-def handle_csv():
-    data = open("data/occupations.csv", 'rt')
-    occCsvReader = csv.reader( data)
-    next(occCsvReader)
-    for row in occCsvReader:
-        if row[0] != "Total":
-            occDict[row[0]] = float(row[1])
-handle_csv()
-
-# maintains the proportion between the occupation percentages by adding them to a list of size 998
-# selects and returns a random occupation
-def random_occupation():
-    occupation = []
-    for key in occDict:
-        occupation = occupation + [key] * int(occDict[key] * 10)
-    return random.choice(occupation)
 
 @app.route("/") #assign fxn to route
 def home():
@@ -37,9 +15,9 @@ def home():
 @app.route("/occupations") #assign fxn to route
 def table():
     return render_template("template.html",
-    var1 = random_occupation(),
-    items = occDict.keys(),
-    dict = occDict)
+    var1 = occs.random_occupation(),
+    items = occs.occDict.keys(),
+    dict = occs.occDict)
 
 if __name__ == "__main__":
     app.debug = True
