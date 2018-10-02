@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  {% extends "base.html" %}
+  {% block title %}Welcome{% endblock %}
+  {% block content %}
+  <h2>Greetings, {{ var1 }}</h2>
+  <br>
+  <form action="/logout">
+    <input type="submit" value="Log out">
+  </form>
+  {% endblock %}
+  {% block footer %}
+   &copy Flasking u a q
+  {% endblock %}
+</html>
