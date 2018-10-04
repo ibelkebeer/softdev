@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html>
-  {% extends "base.html" %}
-  {% block title %}Welcome{% endblock %}
-  {% block content %}
-  <form action="/login" method="POST">
-    <h2>Provide thy username</h2>
-    <input type="text" name="username">
-    <br>
-    <h2>Provide thy password</h2>
-    <input type="password" name="pass">
-    <br>
-    <input type="submit">
-  </form>
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+{% set msgs = get_flashed_messages() %}
+{% for msg in msgs %}
+<center><font color="red"><h2>{{ msg }}</h2></font></center>
+{% endfor %}
+<form action="/login" method="POST">
+  <h2>Provide thy username</h2>
+  <input type="text" name="username">
   <br>
-  {% endblock %}
-  {% block footer %}
-  &copy Flasking u a q
-  {% endblock %}
-</html>
+  <h2>Provide thy password</h2>
+  <input type="password" name="pass">
+  <br>
+  <input type="submit">
+</form>
+<br>
+{% endblock %}
+{% block footer %}
+&copy Flasking u a q
+{% endblock %}

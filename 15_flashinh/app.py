@@ -23,9 +23,11 @@ def login():
     if request.method == "GET": # default redirect from route
         return render_template("login.html")
     if request.form.get('username') != user: # if username is invalid
-        return render_template("login.html", var1="Error! User does not exist")
+        flash("Error! User does not exist")
+        return render_template("login.html")
     if request.form.get('pass') != password: # if password is invalid
-        return render_template("login.html", var1="Error! Incorect password")
+        flash("Error! Incorect password")
+        return render_template("login.html")
     session['username'] = request.form.get('username') # correct login
     return redirect(url_for("root"))
 
