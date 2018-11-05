@@ -10,13 +10,13 @@ body{
     .nb{
       float: left;
       width: 20%;
-      height: 200px;
+      height: 210px;
       background-color: #e81bec;
     }
     .m{
       float: right;
       width: 80%;
-      height: 200px;
+      height: 210px;
       background-color: #e81bec;
     }
     .c{
