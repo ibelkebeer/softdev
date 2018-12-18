@@ -15,7 +15,7 @@ var gcd = (a, b) => {
   return gcd(b, a % b);
 }
 
-var students = ["Tim", "Tom", "Timmothy", "Tommothy"];
+var students = ["Tim", "Tom", "Timmothy", "Tommothy", "Karen", "Imad", "Daniel"];
 var randomStudent = () => {
   return students[Math.floor(Math.random() * students.length)];
 }
