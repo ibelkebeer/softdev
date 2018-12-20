@@ -8,8 +8,10 @@ var fibonacci = (n) => {
   return fibonacci(n-1) + fibonacci(n-2);
 }
 
-var num = 8;
+var listnum = 8;
+var fibnum = 0;
 var list = document.getElementById("thelist");
+var fibList = document.getElementById("fiblist");
 
 list.addEventListener('mouseover', function(e) {
   console.log(e.fromElement.firstChild.nodeValue)
@@ -25,7 +27,14 @@ list.addEventListener('click', function(e) {
 
 document.getElementById("b").addEventListener('click', function(){
     var li = document.createElement("li");
-    li.innerHTML="item " + num;
+    li.innerHTML="item " + listnum;
     list.appendChild(li);
-    num++;
+    listnum++;
+});
+
+document.getElementById("fb").addEventListener('click', function(){
+    var li = document.createElement("li");
+    li.innerHTML="Fib of " + fibnum + " is " + fibonacci(fibnum);
+    fibList.appendChild(li);
+    fibnum++;
 });
